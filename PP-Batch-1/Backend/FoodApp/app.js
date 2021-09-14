@@ -18,6 +18,7 @@ const app = express();
 // .form fill
 app.use(express.static('public'))
 app.use(express.json());
+// mounting in express
 const userRouter = express.Router();
 const authRouter = express.Router();
 // /api/user/:id
@@ -49,6 +50,12 @@ function signupUser(req, res) {
         createdUser: req.body
     })
 }
+
+
+function loginUser(req, res) {
+
+}
+
 function createUser(req, res) {
     console.log("req.data", req.body);
     user = req.body;
@@ -75,16 +82,12 @@ function getUserById(req, res) {
     res.status(200).send("Hello");
 }
 
-function loginUser(req, res) {
-
-}
-
-// mounting in express 
+ 
 
 
-// app.post("/api/user", getUser);
+// app.post("/api/user", createUser);
 // // get
-// app.get("/api/user", createUser);
+// app.get("/api/user", getUser);
 // //update
 // app.patch("/api/user", updateUser);
 // //delete
